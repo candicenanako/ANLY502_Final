@@ -20,7 +20,7 @@ def process(line):
         #url =info_1[1].split('=')[1]
         title = info_1[2].split('=')[1]
     #--------
-        content = ' '.join(sub_v[start_line+1:sub_v_num+1]).replace(',',' ')#除去逗号只要空格来分开单词
+        content = ' '.join(sub_v[start_line+1:sub_v_num+1]).replace(',',' ')#To remove commas simply use Spaces to separate words
         line_num = content.count(".")
         content=content.strip()
         content=content.split(' ')
@@ -31,7 +31,7 @@ def process(line):
                 words.add(word)
                 wokey[word]=content.count(word)
 
-        wokey_1=sorted(wokey.items(),key=lambda d:d[1],reverse=True)[0:100]#倒序前10个
+        wokey_1=sorted(wokey.items(),key=lambda d:d[1],reverse=True)[0:100]#The first 10 in reverse order
         wokey_2=[]
         for k,v in  wokey_1:
             wokey_2.append(str(k)+'_'+str(v)) 
