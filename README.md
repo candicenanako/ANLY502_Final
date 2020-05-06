@@ -4,9 +4,9 @@
 
 ### GROUP: Wonder 3
 
-### Zihe Yang (zy151)
-### Zhiyu Lin (zl281)
-### Yijun Gan (yg270)
+**Zihe Yang (zy151)**
+**Zhiyu Lin (zl281)**
+**Yijun Gan (yg270)**
 
 
 ## EXECUTIVE SUMMARY
