@@ -23,6 +23,10 @@ In the end, given a topic the user is interested in, for example the “human be
 
 ## CODE FILES
 
+**instance-metadata.json**
+
+The metadata.
+
 **Similarity_spark.ipynb**
 
 Using Gensim’s TF-IDF to recommend similar articles done in Spark clusters.
@@ -51,9 +55,9 @@ A word2vec model with K-means clustering on a subset of the data. Not included i
 
 The word2vec model produced by Word2Vec_Kmeans.ipynb
 
-**instance-metadata.json**
+**Similarity.ipynb**
 
-The metadata.
+Using TF-IDF to recommend similar articles done which is not recommended in this project for not processing data parallelly.
  
 ## DATA 
 
