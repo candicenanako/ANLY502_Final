@@ -62,7 +62,7 @@ The dataset is English Wikipedia dumps in XML. It is approximately 14 GB compres
 ## METHODS & RESULTS 
 
 ### 1. Exploratory Data Analysis
-Before analyzing contents, we explored the titles of pages first. With the help of AWS EMR, we were able to process this analysis within a few minutes. The longest title we get among all these articles is 43. Through the result below, we could know most pages have 2-word or 3-word titles. 
+Before analyzing contents, we explored the titles of pages first. With the help of AWS EMR, we were able to process this analysis within a few minutes. The longest title we get among all these articles is 43. Through the result in Zihe_EDA.ipynb, we could know most pages have 2-word or 3-word titles. 
 
 Next, we used topic modeling to conclude all these titles. Results are shown in the script, which is not convincing enough. Titles might not be the good dataset to be modeled with topic modeling. 
 
@@ -79,7 +79,7 @@ Here we process the text summarization of recommended pages with the help of the
 
 First, we preprocessed the data with tokenization, normalization, lemmatization and removing stopwords. Next, we need to convert  the text into sentences. Then, to find the frequency of occurrence of each word. Then, it is the time to calculate the scores for each sentence by adding weighted frequencies of the words that occur in that particular sentence. When we have the sentence scores dictionary that contains sentences with their corresponding score, we could take the top 5 sentences with the highest scores as the summary of the page. 
 
-Below is the summary of the page - “Autism” with 5 sentences and 188 words. Compared to the original 286 sentences and 6457 words in this page, text summarization saves a bunch of time for us to understand this page.  
+In Zihe_Summary.ipynb, a summary of the page - “Autism” is provided with 5 sentences and 188 words. Compared to the original 286 sentences and 6457 words in this page, text summarization saves a bunch of time for us to understand this page.  
 
 
 ## CONCLUSION & FUTURE WORK 
