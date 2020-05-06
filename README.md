@@ -16,23 +16,31 @@ Since Wikipedia does not currently have a recommendation system, we created one 
 ## INTRODUCTION 
 
 Have you encountered this scenario? -- You are interested in a topic, but are unsure what article to read, or that the article is so long that you do not have enough time to read through. Our project is built to solve these problems by applying NLP techniques into English Wikipedia. 
+
 To parallelize the large dataset, we use AWS EMR with one master (m5.2xlarge) and 6 datanodes (m5.xlarge). In section 5.1, we made some visualizations and used topic modeling to classify page titles. In section 5.2, we described how the pages recommendation is built. We tried the TF-IDF model and Word2Vec, and computed the cosine similarities between a given keyword and the page contents. We tried model methods and decided that TF-IDF works better because it is easier to implement. In section 5.3, word cloud is used to visualize the most important keywords for the recommended articles. In section 5.4, we described steps to summarize the pages content by building an extractive text summarizer with the text rank algorithm. Libraries such as Pyspark, MLlib, Gensim, NLTK and SparkNLP are used in this project.
+
 In the end, given a topic the user is interested in, for example the “human behavior” topic, we were able to return wiki pages most relevant to it,  capture keywords and tags most representative of these pages content, and provide a 5-sentence summary of each page content. In our example, we assumed that pages such as “anthropology” and “autism” would show up higher for high relevance with human behavior and that is indeed what we observed. 
 
 ## CODE FILES
 
 Similarity_spark.ipynb
 Using Gensim’s TF-IDF to recommend similar articles done in Spark clusters.
+
 Similarity_sparkml.ipynb
 Using Spark MLlib’s TF-IDF packages for article recommendation, done in Spark clusters.
+
 Zihe_EDA.ipynb
 Exploratory data analysis, including summary statistics and topic modeling application.
+
 Zihe_Summary.ipynb
 WordCloud and text summarization model using the text rank algorithm.
+
 Wiki_PageInfo.py
 To explore the whole dataset data with getting the count of words, lines, the frequent words for each page. 
+
 Word2Vec_Kmeans.ipynb
 A word2vec model with K-means clustering on a subset of the data. Not included in the final result because it does not directly help to answer the research question.
+
 Wikiw2v.model
 The word2vec model produced by Word2Vec_Kmeans.ipynb
  
@@ -51,11 +59,11 @@ Next, we used topic modeling to conclude all these titles. Results are shown in 
 ### 2. Pages Recommendation by given Topics
 Here we will take an example for the following methods. We are interested in the topic “human behavior”. Therefore, we fed this phrase into the TF-IDF model and asked that the model compare each word in this phrase to the entire dictionary, and assign articles similarity scores based on all of the words that it contains. We observe that “human behavior” returned the results shown below. Note that due to credit and time limit, we were only able to run the model on a portion of the dataset.
 
-Keywords in Recommendations
+### 3. Keywords in Recommendations
 Given top recommended pages in 5.2, we are going to take all the pages whose similarity rate is higher than 1%, which are  "Anthropology", "Altruism", "Autism", "Ayn Rand" these four pages in this case. With WordCloud techniques, we are able to see these keywords in these recommended pages. Top keywords relating to the topic “Human Behavior” are “study”, “social” and “work”. 
 
 
-### 3. Summary of Recommendations
+### 4. Summary of Recommendations
 Here we process the text summarization of recommended pages with the help of the Python NLTK library. The idea is to identify the important sentences from the original text and extract only those from the text. Those extracted sentences would be our summary. 
 
 First, we preprocessed the data with tokenization, normalization, lemmatization and removing stopwords. Next, we need to convert  the text into sentences. Then, to find the frequency of occurrence of each word. Then, it is the time to calculate the scores for each sentence by adding weighted frequencies of the words that occur in that particular sentence. When we have the sentence scores dictionary that contains sentences with their corresponding score, we could take the top 5 sentences with the highest scores as the summary of the page. 
