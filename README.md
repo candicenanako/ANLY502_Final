@@ -23,26 +23,37 @@ In the end, given a topic the user is interested in, for example the “human be
 
 ## CODE FILES
 
-Similarity_spark.ipynb
+**Similarity_spark.ipynb**
+
 Using Gensim’s TF-IDF to recommend similar articles done in Spark clusters.
 
-Similarity_sparkml.ipynb
+**Similarity_sparkml.ipynb**
+
 Using Spark MLlib’s TF-IDF packages for article recommendation, done in Spark clusters.
 
-Zihe_EDA.ipynb
+**Zihe_EDA.ipynb**
+
 Exploratory data analysis, including summary statistics and topic modeling application.
 
-Zihe_Summary.ipynb
+**Zihe_Summary.ipynb**
+
 WordCloud and text summarization model using the text rank algorithm.
 
-Wiki_PageInfo.py
+**Wiki_PageInfo.py**
+
 To explore the whole dataset data with getting the count of words, lines, the frequent words for each page. 
 
-Word2Vec_Kmeans.ipynb
+**Word2Vec_Kmeans.ipynb**
+
 A word2vec model with K-means clustering on a subset of the data. Not included in the final result because it does not directly help to answer the research question.
 
-Wikiw2v.model
+**Wikiw2v.model**
+
 The word2vec model produced by Word2Vec_Kmeans.ipynb
+
+**instance-metadata.json**
+
+The metadata.
  
 ## DATA 
 
